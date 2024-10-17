@@ -1,0 +1,22 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:13306/freshshop?useUnicode=true&characterEncoding=utf-8&serverTimezone=GMT%2B8&useSSL=false
+    username: root
+    password: 123456
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+mybatis-plus:
+  #设置名前缀
+  global-config:
+    db-config:
+      table-prefix: sys_
+  type-aliases-package: com.example.*
+  configuration:
+    #日志
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    #Mybatis-Plus骆驼命名法
+    map-underscore-to-camel-case: true
+  configuration-properties:
+    prefix: sys_ # 自定义sql中名带前缀
