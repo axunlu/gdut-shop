@@ -2,6 +2,7 @@ package com.example.shopbanner.controller;
 
 
 import com.example.shopbanner.pojo.Banner;
+import com.example.shopbanner.pojo.BannerDTO;
 import com.example.shopbanner.pojo.R;
 import com.example.shopbanner.service.BannerService;
 
@@ -11,12 +12,14 @@ import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Random;
 
 @RestController
 @RequestMapping(value = "/banner/")
+@CrossOrigin
 public class BannerController {
     @Autowired
     private BannerService bannerService;
@@ -46,11 +49,20 @@ public class BannerController {
                 banners.get(i).setImgUrl(randomImages[i % randomImages.length]);
             }
         }
-        return R.ok("查询所有数据图片成功").data("banners", banners);
+        List<BannerDTO> BannerDTOs = new ArrayList<>();
+        for (int i = 0; i < banners.size(); i++) {
+            BannerDTO bannerDTO = new BannerDTO();
+            bannerDTO.setId(banners.get(i).getBannerId()+"");
+            bannerDTO.setHrefUrl(banners.get(i).getHrefUrl());
+            bannerDTO.setImgUrl(banners.get(i).getImgUrl());
+            bannerDTO.setType(banners.get(i).getBannerType()+"");
+            BannerDTOs.add(bannerDTO);
+        }
+        return R.ok("查询所有数据图片成功",BannerDTOs);
     }
 
 
-    @PostMapping(value = "/addBanner")
+/*    @PostMapping(value = "/addBanner")
     public R addBanner(@RequestBody Banner banner) {
         boolean flag = bannerService.save(banner);
         if (flag) {
@@ -69,9 +81,9 @@ public class BannerController {
         } else {
             return R.error("删除轮播图失败");
         }
-    }
+    }*/
 
-    @GetMapping(value = "/getBannerById/{id}")
+/*    @GetMapping(value = "/getBannerById/{id}")
     public R getByIdBanner(@PathVariable("id") Integer bannerId) {
         Banner banner = bannerService.getById(bannerId);
         return R.ok("按照轮播图编号查询数据成功").data("banner", banner);
@@ -85,5 +97,5 @@ public class BannerController {
         } else {
             return R.error("修改轮播图失败");
         }
-    }
+    }*/
 }
