@@ -24,7 +24,7 @@ public class BannerController {
     @Autowired
     private BannerService bannerService;
 
-    @GetMapping(value = "/getAllBanners")
+    @GetMapping(value = "/getAllBanners")/*lx*/
     public R getAllBanner(@RequestParam(name = "distributionSite", defaultValue = "1") int distributionSite) {
         List<Banner> banners = bannerService.list();
 
