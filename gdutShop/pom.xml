@@ -17,6 +17,7 @@
     <modules>
         <module>Shop-Banner</module>
         <module>Shop-MySQL</module>
+        <module>Shop-Category</module>
     </modules>
     <properties>
         <java.version>8</java.version>
