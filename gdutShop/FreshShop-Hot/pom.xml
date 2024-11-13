@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.example</groupId>
+        <artifactId>Rabbit-FreshShop</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+
+    <groupId>org.example</groupId>
+    <artifactId>FreshShop-Hot</artifactId>
+
+    <properties>
+        <maven.compiler.source>21</maven.compiler.source>
+        <maven.compiler.target>21</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+    <dependencies>
+        <!-- 导入Common模块 -->
+        <dependency>
+            <groupId>org.example</groupId>
+            <artifactId>FreshShop-Common</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+        <!-- 导入MySQL模块 -->
+        <dependency>
+            <groupId>org.example</groupId>
+            <artifactId>FreshShop-MySQL</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+        <!-- Eureka客户端 -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+            <version>4.0.3</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.example</groupId>
+            <artifactId>FreshShop-Goods</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
+</project>

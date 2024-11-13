@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 
 @SpringBootApplication
-public class ShopBannerApplication {
+public class ShopBannerApplication {//1
 
     public static void main(String[] args) {
         SpringApplication.run(ShopBannerApplication.class, args);
