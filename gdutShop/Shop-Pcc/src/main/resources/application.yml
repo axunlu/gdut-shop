@@ -1,0 +1,21 @@
+#端口号
+server:
+  port: 9004
+#服务名
+spring:
+  application:
+    name: freshshop-pcc
+  profiles:
+    active: mysql
+  main:
+    allow-bean-definition-overriding: true
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+#eureka注册中心配置
+eureka:
+  instance:
+    prefer-ip-address: true #使用id注册，不使用主机名
+  client:
+    service-url:
+      defaultZone: http://localhost:10086/eureka/
